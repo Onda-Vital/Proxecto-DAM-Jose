@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="18dp"
+    android:background="@drawable/bg_lootbox_backdrop"
+    android:elevation="10dp">
+
+    <!-- Card principal -->
+    <LinearLayout
+        android:id="@+id/cardRoot"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@drawable/bg_lootbox_card"
+        android:elevation="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loot Box diaria"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_horizontal"/>
+
+        <!-- Subtítulo -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abre e consegue recompensas"
+            android:textSize="14sp"
+            android:textColor="#BFD3FF"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Zona visual da caixa -->
+        <FrameLayout
+            android:id="@+id/boxStage"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginBottom="14dp">
+
+            <!-- Halo/brillo -->
+            <View
+                android:id="@+id/vGlow"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_lootbox_glow" />
+
+            <!-- Chispiñas decorativas -->
+            <ImageView
+                android:id="@+id/ivSparkles"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:alpha="0.25"
+                android:contentDescription="@null" />
+
+            <!-- Caixa -->
+            <ImageView
+                android:id="@+id/ivBox"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_gravity="center"
+                android:src="@drawable/lootbox_closed"
+                android:contentDescription="Loot box"
+                android:scaleType="fitCenter" />
+
+            <!-- Loading por riba -->
+            <ProgressBar
+                android:id="@+id/pbLoading"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <!-- Recompensa -->
+        <TextView
+            android:id="@+id/tvReward"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_lootbox_reward_pill"
+            android:padding="14dp"
+            android:text="Gañaches 20 moedas"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Contador de restantes -->
+        <TextView
+            android:id="@+id/tvOpensLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quédanche 2 hoxe"
+            android:textSize="12sp"
+            android:textColor="#A9B8D6"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Botón abrir -->
+        <Button
+            android:id="@+id/btnOpen"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Abrir"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="@drawable/bg_lootbox_button"
+            android:stateListAnimator="@null" />
+
+        <!-- Botón pechar opcional -->
+        <TextView
+            android:id="@+id/tvClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pechar"
+            android:textSize="13sp"
+            android:textColor="#8FA8FF"
+            android:paddingTop="14dp"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
